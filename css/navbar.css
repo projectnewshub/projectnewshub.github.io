@@ -1,0 +1,46 @@
+.header {
+
+		background-color:#00796b;
+		height: 100px;
+    padding-bottom: 20px !important;
+    border-bottom: 1px solid #004d40;
+	}
+
+
+.headline {
+  font-size: 70px;
+  font-weight:bold;
+  align:left;
+
+}
+
+.headlineIcon {
+  padding-top: 10px;
+  font-size: 40px;
+}
+
+
+.center {
+/*margin-left: 150px !important;*/
+
+}
+
+
+.searchBarExtension {
+  width: 500px !important;
+}
+
+
+.fixWidthTB {
+  width: 100% !important;
+
+}
+
+.tbListFix {
+  margin-top:-10px;
+}
+
+
+.fixWidthBtn {
+    width: 20% !important;
+}
