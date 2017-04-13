@@ -1,0 +1,36 @@
+.sb {
+/* Padding of the Searchbar */
+padding-top: 180px !important;
+padding-left: 10px !important;
+padding-right: 10px !important;
+
+
+}
+
+
+/* Datetime picker */
+.picker {
+ margin-top: 50px;
+}
+
+
+/* Focused List-group-items */
+.list-group-item:focus {
+
+	background-color:#c5cae9 !important;
+
+}
+
+/* List Stuff */
+.customList {
+  margin-top: 20px;
+  border:none !important;
+  border-radius:0px ;
+}
+
+.customListItem {
+  border:none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 0px !important;
+}
