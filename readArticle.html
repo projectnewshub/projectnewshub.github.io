@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> News Hub </title>
+	<!-- Das neueste kompilierte und minimierte CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+
+	<!-- navbar stylesheet -->
+	<link  rel="stylesheet" href="css/navbar.css">
+	<link  rel="stylesheet" href="css/panels.css">
+	<link rel="stylesheet" href="css/sidebar.css">
+	<link rel="stylesheet" href="css/readOptions.css">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.min.js"></script>
+
+</head>
+
+
+
+<body>
+
+<div id="header" class="navbar navbar-default navbar-fixed-top">
+
+	<div class="customHeader">
+		<div><h1 class="headline"> News Hub</h1></div>
+	</div>
+
+
+	<div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="icon-reorder"></i>
+        </button>
+        <a class="navbar-brand" href="index.html">
+            Home
+        </a>
+    </div>
+    <nav class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#">Articles</a>
+            </li>
+	    			<li>
+                <a href="#">Feeds</a>
+            </li>
+        </ul>
+
+				<!--Search Bar-->
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button id="tagBtn" type="button" class="btn btn-default dropdown-toggle center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategorie  <span class="caret"></span></button>
+								<ul id="dropDownMenu" class="dropdown-menu">
+									<li><a href="#">Wirtschaft</a></li>
+									<li><a href="#">Politik</a></li>
+									<li><a href="#">Informatik</a></li>
+									<li role="separator" class="divider"></li>
+									<!-- Textbox for additional Label Input -->
+									<li class="tbListFix"><input type="text" id="tagchooser" class="form-control fixWidthTB" placeholder="benutzerdefiniert"> <!--<button class="btn btn-default fixWidthBtn"><span class="glyphicon glyphicon-plus"></span></button>--></li>
+								</ul>
+							</div><!-- /btn-group -->
+							<input type="text" class="form-control searchBarExtension" aria-label="...">
+						</div><!-- /input-group -->
+					</div> <!-- Form Group -->
+					<button type="submit" class="btn btn-default">Hinzufuegen</button>
+				</form>
+
+
+
+
+				<!-- Username -->
+        <ul class="nav navbar-nav pull-right">
+            <li class="dropdown">
+                <a href="#" id="" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Peter<i class="icon-sort-down"></i></a>
+                <ul class="dropdown-menu pull-right">
+                    <li id="logoutBtn"><a href="index.html">Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+				<!-- /Username -->
+
+    	</nav>
+		</div>
+
+
+<div id="wrapper">
+
+	<!-- Sidebar -->
+  <div id="sidebar-wrapper" class="col-md-2 sb">
+
+		<!-- Search Bar -->
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Schlagwortsuche">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+		<!-- /Search Bar -->
+
+
+		<!-- Tags -->
+		<div class="list-group customList">
+  		<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Wirtschaft</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Politik</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Technik</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Regional</a>
+		</div>
+		<!-- Tags -->
+
+
+
+	<div class="input-group date picker" data-provide="datepicker">
+	    <input type="text" class="form-control">
+	    <div class="input-group-addon">
+	        <span class="glyphicon glyphicon-th"></span>
+	    </div>
+	</div>
+
+
+	<hr>
+
+	<!-- Sidebar -->
+        </div>
+        <div id="main-wrapper" class="col-md-10 pull-right">
+					<!-- Main Content Area -->
+
+					<div class="readPanel">
+
+						<div class="topLine pull-left">
+							<br/><strong>Source: </strong><a href="https://www.focus.de/article/somestuff.html">https://www.focus.de/article/somestuff.html</a><br/>
+						</div>
+
+						<div class="topLine pull-right">
+							<div class="btn-group">
+								<button class="btn pBtn"><span class="glyphicon glyphicon-heart"></span></button>
+								<button class="btn pBtn"><span class="glyphicon glyphicon-share"></span></button>
+								<button class="btn pBtn"><span class="glyphicon glyphicon-trash"></span></button>
+							</div>
+						</div>
+
+
+
+
+						<br/><br/><br/>
+
+						<center>
+							<h1> <strong> Title </strong></h1>
+							<h3> <strong> subtitle </strong></h3>
+							<br/>
+						</center>
+						<p class="articleContent">
+
+							Aut non error quo laudantium autem. Quis fugiat est totam repudiandae eveniet sequi ratione. Eum voluptatem illo accusamus sed est expedita amet. Odio dolore doloribus non. Est ut quaerat distinctio aut repudiandae. Culpa doloribus odit eligendi.
+
+							Ea consequatur optio et voluptatibus magni rem ipsa. Repellendus voluptatibus laborum delectus optio quidem voluptate ut. Libero nostrum necessitatibus architecto quia debitis dolor iure.
+
+							Accusantium dicta cum qui commodi eos ea. Corporis odio quidem cupiditate voluptas tenetur quia debitis. Delectus laudantium commodi necessitatibus accusamus. Eos qui quae fugiat et ut consequatur quos nemo.
+
+							Rerum tempora dolore exercitationem. Ut amet perferendis libero sunt consequuntur. Illum et repellendus blanditiis unde sed. Occaecati quibusdam sunt laudantium magnam dolores fuga vero. Perspiciatis eum rerum harum et dolorem et voluptates. Illum in magni laboriosam.
+
+							Saepe consequatur quidem ea officiis at sapiente. Accusantium qui rem praesentium vel vel magni. Possimus dolore eligendi voluptatem accusantium tenetur est asperiores. Neque odit quod est enim quae impedit quasi. Natus repudiandae quos laborum ipsam quis.
+						</p>
+
+
+					</div>
+					<!-- /Article Panel -->
+
+
+
+
+
+					<!-- /Main Content Area -->
+
+
+						<!-- Main Footer Area -->
+            <div class="col-md-12 footer">
+              <ul class="nav navbar-nav">
+								<li><a href="">Unsere AGB</a></li>
+								<li><a href="">Datenschutzerklaerung</a></li>
+								<li><a href="">Impressum</a></li>
+								<li><a href="">Cookies</a></li>
+							</ul>
+            </div>
+						<!-- /Main Footer Area -->
+
+        </div>
+</div>
+
+
+</body>
+<script>
+
+	$(function() {
+
+			 $("#logoutBtn").click(function(){
+
+				console.log("Logging out");
+
+			});
+
+	});
+
+
+	$(function() {
+
+			 $("#dropDownMenu li a").click(function(){
+
+				 $("#tagBtn").text($(this).text());
+				 $("#tagBtn").val($(this).text());
+
+			});
+
+
+
+	});
+
+
+	$(function() {
+
+						$("#tagchooser").keydown(function(e) {
+
+							if(e.which == 13) {
+
+								$("#tagBtn").text($("#tagchooser").val());
+								$("#tagBtn").val($("#tagchooser").val());
+
+								$("#tagchooser").text("");
+								$("#tagchooser").val("");
+							}
+						});
+
+	});
+
+
+
+</script>
+
+
+
+
+</html>

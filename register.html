@@ -2,18 +2,13 @@
 <html>
 <head>
 	<!-- Das neueste kompilierte und minimierte CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
-	<!-- Optionales Theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"> </script>
 
 	<!-- Das neueste kompilierte und minimierte JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
   <!-- Login stylesheet -->
 	<link  rel="stylesheet" href="css/login.css">
@@ -31,9 +26,9 @@
   						<div class="row">
 
   							<div class="col-xs-12">
-  								<a href="#" id="register-form-link">Register</a>
+  								<a href="" id="register-form-link">Register</a>
   							</div>
-								
+
   						</div>
   						<hr>
   					</div>
@@ -74,33 +69,7 @@
 
 
 
-
-
 </body>
-<script>
 
-$(function() {
-
-    $('#login-form-link').click(function(e) {
-		$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-	$('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-
-});
-
-
-
-
-</script>
 
 </html>

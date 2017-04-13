@@ -23,3 +23,71 @@
 .panelFeed {
   border-left: 10px solid #4caf50;
 }
+
+
+.deletePost {
+    color:#e0e0e0;
+
+}
+
+.deletePost:hover {
+    color:#fafafa;
+
+}
+
+
+.textPart {
+  float:left;
+  width:85%;
+}
+
+
+.thumbnail {
+  background-color:black;
+  float:right;
+  width:120px;
+  height:120px;
+  margin-right:20px;
+  margin-bottom:0;
+}
+
+
+.readPanel {
+  border: 1px solid gray;
+  border-left: 10px solid #4caf50;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+
+}
+
+
+.articleContent {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 22px;
+  padding-bottom: 50px;
+
+}
+
+
+.topLine {
+  height:50px;
+
+}
+/* Panel Button */
+.pBtn {
+  background-color:#4caf50;
+  margin-top:10px;
+  margin-right: 5px;
+  color:#fce4ec;
+  font-size:15px;
+}
+
+.pBtn:hover {
+  background-color:#26a69a;
+  color:#fce4ec;
+
+}
