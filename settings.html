@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://projectnewshub.github.io/dashboard.html -->
+<html><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<title> News Hub </title>
+	<!-- Das neueste kompilierte und minimierte CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+	<link rel="stylesheet" href="css/layout.css">
+
+	<!-- navbar stylesheet -->
+	<link  rel="stylesheet" href="css/navbar.css">
+	<link  rel="stylesheet" href="css/panels.css">
+	<link rel="stylesheet" href="css/sidebar.css">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.min.js"></script>
+
+</head>
+
+
+
+<body>
+
+<div id="header" class="navbar navbar-default navbar-fixed-top">
+
+	<div class="customHeader">
+		<div><h1 class="headline"> News Hub</h1></div>
+	</div>
+
+
+	<div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="icon-reorder"></i>
+        </button>
+        <a class="navbar-brand" href="index.html">
+            Home
+        </a>
+    </div>
+    <nav class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="dashboard.html#">Articles</a>
+            </li>
+	    			<li>
+                <a href="dashboard.html#">Feeds</a>
+            </li>
+						<!--
+						<li>
+                <a href="settings.html">Setting</a>
+            </li>
+						-->
+
+        </ul>
+
+
+
+
+				<!--Search Bar-->
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button id="tagBtn" type="button" class="btn btn-default dropdown-toggle center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategorie  <span class="caret"></span></button>
+								<ul id="dropDownMenu" class="dropdown-menu">
+									<li><a href="#">Wirtschaft</a></li>
+									<li><a href="#">Politik</a></li>
+									<li><a href="#">Informatik</a></li>
+									<li role="separator" class="divider"></li>
+									<!-- Textbox for additional Label Input -->
+									<li class="tbListFix"><input type="text" id="tagchooser" class="form-control fixWidthTB" placeholder="benutzerdefiniert"> <!--<button class="btn btn-default fixWidthBtn"><span class="glyphicon glyphicon-plus"></span></button>--></li>
+								</ul>
+							</div><!-- /btn-group -->
+							<input type="text" class="form-control searchBarExtension" aria-label="...">
+						</div><!-- /input-group -->
+					</div> <!-- Form Group -->
+					<button type="submit" class="btn btn-default">Hinzufuegen</button>
+				</form>
+
+
+
+
+				<!-- Username -->
+        <ul class="nav navbar-nav pull-right">
+            <li class="dropdown">
+                <a href="#" id="" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Peter<i class="icon-sort-down"></i></a>
+                <ul class="dropdown-menu pull-right">
+                    <li id="logoutBtn"><a href="index.html">Log Out</a></li>
+										<li id="settBtn"><a href="settings.html">Settings</a></li>
+                </ul>
+            </li>
+        </ul>
+				<!-- /Username -->
+
+    	</nav>
+		</div>
+
+
+<div id="wrapper">
+
+	<!-- Sidebar -->
+  <div id="sidebar-wrapper" class="col-md-2 sb">
+
+		<!-- Search Bar -->
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Schlagwortsuche">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+		<!-- /Search Bar -->
+
+
+		<!-- Tags -->
+		<div class="list-group customList">
+  		<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Wirtschaft</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Politik</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Technik</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Regional</a>
+		</div>
+		<!-- Tags -->
+
+
+
+	<div class="input-group date picker" data-provide="datepicker">
+	    <input type="text" class="form-control">
+	    <div class="input-group-addon">
+	        <span class="glyphicon glyphicon-th"></span>
+	    </div>
+	</div>
+
+
+	<hr>
+
+	<!-- Sidebar -->
+        </div>
+        <div id="main-wrapper" class="col-md-10 pull-right">
+					<!-- Main Content Area -->
+
+
+
+					<!-- Article Panel -->
+
+					<div class="panel panel-default panel-custom" style="margin-bottom: 70px;">
+
+						<div class="panel-heading clearfix">
+								<h3 class="panel-title pull-left panel-custom-heading">Peter's Settings</h3>
+
+						</div>
+
+
+						<div class="panel-body">
+
+						<style>
+						table {
+							border: 1px solid #1a237e;;
+						}
+						th, td {
+							padding: 15px; width:50%;
+						}
+						</style>
+
+						<table style="width:100%">
+						<tr>
+							<td>
+								<h4>Account informations:</h4>
+							</td>
+							<td>
+								<h4>Change password:</h4>
+							</td>
+						  </tr>
+						  <tr>
+
+							<td>
+
+								<div border="2px" >
+								Name:<br><input type="text" name="name" value="Peter" disabled><button type="button" onclick="">Edit</button><br>
+								E-mail:<br><input type="email" name="email" value="peter@web.de" autocomplete="off" disabled><button type="button" onclick="">Edit</button><br><br>
+								Registered since: 01.01.2017
+								Total articles read: 36
+								<br><br>
+								<button type="button" onclick="">Save</button>
+								<input type="reset"	value="Reset">
+								</div>
+
+
+							</td>
+							<td>
+
+								<div border="2px">
+
+								Current Password:<br><input type="password" id="AcPw"><br><br>
+								New Password:<br><input type="password" id="NePw1"><br>
+								Repeat New Password:<br><input type="password" id="NePw2"><br><br>
+								<button type="button" onclick="">Save</button><br><br>
+
+							</div>
+
+							</td>
+						</tr>
+						  <tr>
+							<td>
+								<h4>Subscribed Feeds:</h4>
+							</td>
+							<td>
+								<h4>Clear artikel list:<h4>
+							</td>
+						  </tr>
+
+						</tr>
+						  <tr>
+							<td>
+								<textarea name="message" rows="10" cols="45" disabled>
+Feedlink1
+Feedlink2
+Feedlink3
+								</textarea><br>
+								<button type="button" onclick="">Edit</button>
+								<button type="button" onclick="">Save</button>
+
+							</td>
+							<td>
+							<p>Multiselect will cause a combination</p>
+							<input type="checkbox" name="clean1" value="Cl1"> Clean all<br>
+							<input type="checkbox" name="clean2" value="Cl2"> Clean all read articles<br>
+							<input type="checkbox" name="clean3" value="Cl3"> Clean all unread articles<br>
+							<input type="checkbox" name="clean4" value="Cl4"> Clean older than 15 days<br>
+							<input type="checkbox" name="clean5" value="Cl5"> Clean older than 30 days<br>
+							<input type="checkbox" name="clean6" value="Cl6"> Clean older than a Year<br>
+							<br><br>
+							<button type="button" onclick="">Deselect all</button>
+							<button type="button" onclick="">Clean</button>
+							</td>
+						  </tr>
+						</table>
+
+
+
+
+						</div>
+
+					</div>
+
+					<!-- /Article Panel -->
+
+
+
+
+
+
+
+
+
+
+
+
+					<!-- /Main Content Area -->
+
+
+					<!-- Main Footer Area -->
+					<div class="col-md-12 footer">
+						<ul class="nav navbar-nav">
+							<li><a href="https://projectnewshub.github.io/dashboard.html">Unsere AGB</a></li>
+							<li><a href="https://projectnewshub.github.io/dashboard.html">Datenschutzerklaerung</a></li>
+							<li><a href="https://projectnewshub.github.io/dashboard.html">Impressum</a></li>
+							<li><a href="https://projectnewshub.github.io/dashboard.html">Cookies</a></li>
+						</ul>
+					</div>
+					<!-- /Main Footer Area -->
+
+        </div>
+</div>
+
+
+
+<script>
+
+
+		function deletePost(index) {
+			console.log("Deleting Post");
+		}
+
+
+	$(function() {
+
+			 $("#logoutBtn").click(function(){
+
+				console.log("Logging out");
+
+			});
+
+	});
+
+
+	$(function() {
+
+			 $("#dropDownMenu li a").click(function(){
+
+				 $("#tagBtn").text($(this).text());
+				 $("#tagBtn").val($(this).text());
+
+			});
+
+
+
+	});
+
+
+	$(function() {
+
+						$("#tagchooser").keydown(function(e) {
+
+							if(e.which == 13) {
+
+								$("#tagBtn").text($("#tagchooser").val());
+								$("#tagBtn").val($("#tagchooser").val());
+
+								$("#tagchooser").text("");
+								$("#tagchooser").val("");
+							}
+						});
+
+	});
+
+
+
+</script>
+
+
+
+
+
+</body></html>
