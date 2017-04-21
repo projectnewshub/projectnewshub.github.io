@@ -1,75 +1,174 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<title> News Hub </title>
 	<!-- Das neueste kompilierte und minimierte CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+	<link rel="stylesheet" href="css/layout.css">
 
+	<!-- navbar stylesheet -->
+	<link  rel="stylesheet" href="css/navbar.css">
+	<link  rel="stylesheet" href="css/panels.css">
+	<link rel="stylesheet" href="css/sidebar.css">
+	<link rel="stylesheet" href="css/register.css">
 
-	<!-- Das neueste kompilierte und minimierte JavaScript -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
-  <!-- Login stylesheet -->
-	<link  rel="stylesheet" href="css/login.css">
-
+	<script src="js/bootstrap-datepicker.min.js"></script>
 
 </head>
 
+
+
 <body>
 
-  <div class="container">
-      	<div class="row">
-  			<div class="col-md-6 col-md-offset-3">
-  				<div class="panel panel-login">
-  					<div class="panel-heading">
-  						<div class="row">
+<div id="header" class="navbar navbar-default navbar-fixed-top">
 
-  							<div class="col-xs-12">
-  								<a href="" id="register-form-link">Register</a>
-  							</div>
+	<div class="customHeader">
+		<div><h1 class="headline"> News Hub</h1></div>
+	</div>
 
-  						</div>
-  						<hr>
-  					</div>
-  					<div class="panel-body">
-  						<div class="row">
-  							<div class="col-lg-12">
 
-  								<form id="register-form" action="#" method="post" role="form" style="display: block;">
-  									<div class="form-group">
-  										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-  									</div>
-  									<div class="form-group">
-  										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-  									</div>
-  									<div class="form-group">
-  										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-  									</div>
-  									<div class="form-group">
-  										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
-  									</div>
-  									<div class="form-group">
-  										<div class="row">
-  											<div class="col-sm-6 col-sm-offset-3">
-  												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
-  											</div>
-  										</div>
-  									</div>
-  								</form>
-  							</div>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
+	<div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="icon-reorder"></i>
+        </button>
+        <a class="navbar-brand" href="#">
+            Home
+        </a>
+    </div>
+    <nav class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#" onclick="$('#myModal').modal();">Registrieren</a>
+            </li>
+        </ul>
 
 
 
+
+        <form id="signin" class="navbar-form pull-right" role="form" action="dashboard.html">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Adresse">
+              </div>
+
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input id="password" type="password" class="form-control" name="password" value="" placeholder="Passwort">
+              </div>
+
+              <button type="submit" class="btn btn-default">Login</button>
+        </form>
+
+    	</nav>
+		</div>
+
+
+<div id="wrapper">
+
+	<!-- Sidebar -->
+  <div id="sidebar-wrapper" class="col-md-2 sb">
+
+		<!-- Search Bar -->
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Schlagwortsuche">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Los!</button>
+      </span>
+    </div>
+		<!-- /Search Bar -->
+
+
+    <!-- Tags -->
+		<div class="list-group customList">
+  		<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Wirtschaft</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Politik</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Technik</a>
+			<a href="#" class="list-group-item customListItem"><span class="glyphicon glyphicon-tag"></span> Regional</a>
+		</div>
+		<!-- Tags -->
+
+
+
+	<div class="input-group date picker" data-provide="datepicker">
+	    <input type="text" class="form-control" placeholder="Datum auswählen">
+	    <div class="input-group-addon">
+	        <span class="glyphicon glyphicon-th"></span>
+	    </div>
+	</div>
+
+
+	<hr>
+
+	<!-- Sidebar -->
+        </div>
+        <div id="main-wrapper" class="col-md-10 pull-right">
+					<!-- Main Content Area -->
+
+					<!-- Modal -->
+				  <div class="modal fade" id="myModal" role="dialog">
+				    <div class="modal-dialog">
+
+
+
+				      <!-- Modal content-->
+				      <div class="modal-content">
+				        <div class="modal-header">
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <h4 class="modal-title">Registrierung</h4>
+				        </div>
+				        <div class="modal-body">
+									<form id="register-form" action="#" method="post" role="form" style="display: block;">
+										<div class="form-group">
+											<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Benutzername" value="">
+										</div>
+										<div class="form-group">
+											<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Adresse" value="">
+										</div>
+										<div class="form-group">
+											<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Passwort">
+										</div>
+										<div class="form-group">
+											<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Passwort best&auml;tigen">
+										</div>
+
+									</form>
+
+
+
+				        </div>
+				        <div class="modal-footer">
+				          <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+									<button type="button" class="btn btn-default disabled" data-dismiss="modal">Registrierung Abschlie&szlig;en</button>
+				        </div>
+				      </div>
+
+				    </div>
+				  </div>
+
+
+
+					<!-- /Main Content Area -->
+
+
+          <!-- Main Footer Area -->
+          <div class="col-md-12 footer">
+            <ul class="nav navbar-nav">
+              <li><a href="">Unsere AGB</a></li>
+              <li><a href="">Datenschutzerklaerung</a></li>
+              <li><a href="">Impressum</a></li>
+              <li><a href="">Cookies</a></li>
+            </ul>
+          </div>
+          <!-- /Main Footer Area -->
+
+        </div>
+</div>
 
 
 </body>
-
-
 </html>

@@ -25,14 +25,12 @@
 }
 
 
-.deletePost {
-    color:#e0e0e0;
-
+a.deletePost {
+    color: #ffeb3b !important;
 }
 
-.deletePost:hover {
-    color:#fafafa;
-
+a.deletePost:hover {
+    color:red !important;
 }
 
 
@@ -49,6 +47,13 @@
   height:120px;
   margin-right:20px;
   margin-bottom:0;
+}
+
+.datetime {
+  float:right;
+  margin-right: 20px;
+  margin-top: 5px;
+  color:#5c6bc0;
 }
 
 
@@ -90,4 +95,9 @@
   background-color:#26a69a;
   color:#fce4ec;
 
+}
+
+.pBtn:focus {
+    background-color:#4caf50;
+    color:#fce4ec;
 }

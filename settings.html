@@ -14,8 +14,10 @@
 	<link  rel="stylesheet" href="css/navbar.css">
 	<link  rel="stylesheet" href="css/panels.css">
 	<link rel="stylesheet" href="css/sidebar.css">
+	<link rel="stylesheet" href="css/settings.css">
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/bootbox.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-datepicker.min.js"></script>
 
@@ -148,95 +150,168 @@
 					<div class="panel panel-default panel-custom" style="margin-bottom: 70px;">
 
 						<div class="panel-heading clearfix">
-								<h3 class="panel-title pull-left panel-custom-heading">Peter's Settings</h3>
+								<h3 class="panel-title pull-left panel-custom-heading">Profileinstellungen</h3>
 
 						</div>
 
 
 						<div class="panel-body">
 
-						<style>
-						table {
-							border: 1px solid #1a237e;;
-						}
-						th, td {
-							padding: 15px; width:50%;
-						}
-						</style>
+							<table style="width:100%">
+							<tr>
+								<td>
+									<h4>Informationen:</h4>
+								</td>
+								<td>
+									<h4>Passwort &auml;ndern</h4>
+								</td>
+							  </tr>
+							  <tr>
 
-						<table style="width:100%">
-						<tr>
-							<td>
-								<h4>Account informations:</h4>
-							</td>
-							<td>
-								<h4>Change password:</h4>
-							</td>
-						  </tr>
-						  <tr>
+								<td>
 
-							<td>
+									<div>
 
-								<div border="2px" >
-								Name:<br><input type="text" name="name" value="Peter" disabled><button type="button" onclick="">Edit</button><br>
-								E-mail:<br><input type="email" name="email" value="peter@web.de" autocomplete="off" disabled><button type="button" onclick="">Edit</button><br><br>
-								Registered since: 01.01.2017
-								Total articles read: 36
-								<br><br>
-								<button type="button" onclick="">Save</button>
-								<input type="reset"	value="Reset">
+
+										<form class="form-horizontal">
+											<div class="form-group">
+												<label class="control-label col-sm-2" style="margin-left:0px;" for="email">Email:</label>
+												<div class="col-sm-10">
+													<p class="form-control-static">someone@example.com</p>
+												</div>
+											</div>
+										</form>
+
+										<form class="form-horizontal">
+											<div class="form-group">
+												<label class="control-label col-sm-2" style="margin-left:0px;" for="email">Name:</label>
+												<div class="col-sm-10">
+													<div class="input-group" style="width:80%;">
+														<input type="text" class="form-control" value="Peter von und zu Penis" aria-describedby="basic-addon2">
+														<span class="input-group-btn">
+											        <button class="btn btn-default" type="button">Speichern</button>
+											      </span>
+
+													</div>
+												</div>
+											</div>
+										</form>
+
+
+								</td>
+								<td>
+
+									<div border="2px">
+
+										<div class="form-group">
+												<input type="text" class="form-control" placeholder="Jetziges Passwort">
+										</div>
+										<div class="form-group">
+												<input type="text" class="form-control" placeholder="neues Passwort">
+										</div>
+										<div class="form-group">
+												<input type="text" class="form-control" placeholder="Passwort wiederholen">
+										</div>
+
+
+									<button type="button" class="btn btn-default">Speichern</button><br><br>
+
 								</div>
 
+								</td>
+							</tr>
+							  <tr>
+								<td>
+									<h4>Deine Feeds:</h4>
+								</td>
+								<td>
+									<h4>Artikel Liste Filtern:<h4>
+								</td>
+							  </tr>
+								</tr>
+							  <tr>
+								<td>
 
-							</td>
-							<td>
+									<ul id="feedList" class="list-group list-group-adjust">
+                    <li class="list-group-item">
+                        <div class="checkbox">
+                            <label class="feedLabel">
+                                http://www.some.de/feeds/security/feed1.rss
+                            </label>
+                        </div>
+                        <div class="pull-right action-buttons">
+                            <a class="btnEdit" href="#" ><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a class="trash btnRemove" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+                        </div>
+                    </li>
 
-								<div border="2px">
+										<li class="list-group-item">
+												<div class="checkbox">
+														<label>
+																http://www.some.de/feeds/security/feed2.rss
+														</label>
+												</div>
+												<div class="pull-right action-buttons">
+														<a class="btnEdit" href="#" ><span class="glyphicon glyphicon-pencil"></span></a>
+														<a class="trash btnRemove" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+												</div>
+										</li>
 
-								Current Password:<br><input type="password" id="AcPw"><br><br>
-								New Password:<br><input type="password" id="NePw1"><br>
-								Repeat New Password:<br><input type="password" id="NePw2"><br><br>
-								<button type="button" onclick="">Save</button><br><br>
 
-							</div>
+										<li class="list-group-item">
+												<div class="checkbox">
+														<label>
+																http://www.some.de/feeds/security/feed3.rss
+														</label>
+												</div>
+												<div class="pull-right action-buttons">
+														<a class="btnEdit" href="#" ><span class="glyphicon glyphicon-pencil"></span></a>
+														<a class="trash btnRemove" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+												</div>
+										</li>
 
-							</td>
-						</tr>
-						  <tr>
-							<td>
-								<h4>Subscribed Feeds:</h4>
-							</td>
-							<td>
-								<h4>Clear artikel list:<h4>
-							</td>
-						  </tr>
+										<li class="list-group-item">
+												<div class="checkbox">
+														<label>
+																http://www.some.de/feeds/security/feed.rss
+														</label>
+												</div>
+												<div class="pull-right action-buttons">
+														<a class="btnEdit" href="#" ><span class="glyphicon glyphicon-pencil"></span></a>
+														<a class="trash btnRemove" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+												</div>
+										</li>
 
-						</tr>
-						  <tr>
-							<td>
-								<textarea name="message" rows="10" cols="45" disabled>
-Feedlink1
-Feedlink2
-Feedlink3
-								</textarea><br>
-								<button type="button" onclick="">Edit</button>
-								<button type="button" onclick="">Save</button>
 
-							</td>
-							<td>
-							<p>Multiselect will cause a combination</p>
-							<input type="checkbox" name="clean1" value="Cl1"> Clean all<br>
-							<input type="checkbox" name="clean2" value="Cl2"> Clean all read articles<br>
-							<input type="checkbox" name="clean3" value="Cl3"> Clean all unread articles<br>
-							<input type="checkbox" name="clean4" value="Cl4"> Clean older than 15 days<br>
-							<input type="checkbox" name="clean5" value="Cl5"> Clean older than 30 days<br>
-							<input type="checkbox" name="clean6" value="Cl6"> Clean older than a Year<br>
-							<br><br>
-							<button type="button" onclick="">Deselect all</button>
-							<button type="button" onclick="">Clean</button>
-							</td>
-						  </tr>
-						</table>
+
+									</ul>
+
+
+								</td>
+								<td>
+
+									<div class="radio">
+									 <label><input type="radio" name="optradio"> Alle Artikel l&ouml;schen</label>
+									</div>
+									<br>
+									<div class="radio">
+									 <label><input type="radio" name="optradio">Alle gelesenen Artikel l&ouml;schen</label>
+									</div>
+									<br>
+									<div class="radio">
+									 <label><input type="radio" name="optradio">Artikel &auml;lter als 15 Tage l&ouml;schen</label>
+									</div>
+									<br>
+									<div class="radio">
+									 <label><input type="radio" name="optradio">Artikel &auml;lter als ein Jahr l&ouml;schen</label>
+									</div>
+
+
+								<br><br>
+									<button type="button" class="btn btn-default">Filter anwenden</button><br><br>
+								</td>
+							  </tr>
+							</table>
 
 
 
@@ -246,13 +321,6 @@ Feedlink3
 					</div>
 
 					<!-- /Article Panel -->
-
-
-
-
-
-
-
 
 
 
@@ -278,6 +346,27 @@ Feedlink3
 
 
 <script>
+
+
+		// Removes a item from the List
+		$(".btnRemove").click(function() {
+		   $(this).closest('li').remove();
+		});
+
+		// Edits the ListItem
+		$(".btnEdit").click(function() {
+		// TODO: Get this thing working!
+
+			var tmpThis = this;
+				bootbox.prompt("This is the default prompt!", function(result){
+						console.log("Got ya input: " + result);
+						$(tmpThis).closest("ul li div label").text(result);
+						$(tmpThis).closest("ul li div label").val(result);
+
+				 });
+
+
+		});
 
 
 		function deletePost(index) {

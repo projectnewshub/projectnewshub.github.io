@@ -32,7 +32,7 @@
 	</div>
 
 
-	<div class="navbar-header">
+	<div class="navbar-header scrollUpHeader">
         <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
             <i class="icon-reorder"></i>
         </button>
@@ -135,14 +135,18 @@
 					<div class="readPanel">
 
 						<div class="topLine pull-left">
-							<br/><strong>Source: </strong><a href="https://www.focus.de/article/somestuff.html">https://www.focus.de/article/somestuff.html</a><br/>
+							<br/><strong>Quelle: </strong><a href="https://www.focus.de/article/somestuff.html">https://www.focus.de/article/somestuff.html</a><br/>
 						</div>
 
 						<div class="topLine pull-right">
 							<div class="btn-group">
-								<button class="btn pBtn"><span class="glyphicon glyphicon-heart"></span></button>
-								<button class="btn pBtn"><span class="glyphicon glyphicon-share"></span></button>
-								<button class="btn pBtn"><span class="glyphicon glyphicon-trash"></span></button>
+								<button id="isFavBtn" class="btn pBtn"><span id="markFav" class="glyphicon glyphicon-star glyphicon-star-empty"></span></button>
+								<button id="isReadBtn" class="btn pBtn"><span id="readMark" class="glyphicon glyphicon-check glyphicon-unchecked"></span> Gelesen</button>
+
+
+								<!-- Not sure about that
+									<button class="btn pBtn"><span class="glyphicon glyphicon-trash"></span></button>
+								-->
 							</div>
 						</div>
 
@@ -197,6 +201,85 @@
 
 </body>
 <script>
+/*
+	Scrolling Header
+
+		Padding-top With Header: 180px
+		Padding-top Witout Header: 80px
+		Css Styles to change: #main-wrapper (layout.css) & .sb (sidebar.css)
+
+
+*/
+
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.customHeader').outerHeight();
+
+$("#main-wrapper").scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $("#main-wrapper").scrollTop();
+
+		console.log(st);
+		console.log(navbarHeight);
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+				console.log("scrolling down");
+        $('.customHeader').removeClass("scrollUpHeader").addClass("scrollDownHeader");
+
+				$('#main-wrapper').css("padding-top", "80px");
+				$('#sidebar-wrapper').css("padding-top", "80px");
+
+				//$('#header').css("margin-top", "-95px");
+
+
+    } else {
+        // Scroll Up
+
+        if(st + $("#main-wrapper").height() < $(document).height()) {
+					console.log("scrolling up");
+					$('.customHeader').removeClass("scrollDownHeader").addClass("scrollUpHeader");
+					$('#main-wrapper').css("padding-top", "180px");
+					$('.sb').css("padding-top", "180px");
+					//$('#header').css("margin-top", "0px");
+        }
+    }
+
+    lastScrollTop = st;
+}
+
+
+
+
+
+//************************************************************//
+
+
+
+	$("#isFavBtn").click(function() {
+		$("#markFav").toggleClass("glyphicon-star-empty");
+	});
+
+
+	$("#isReadBtn").click(function() {
+		$("#readMark").toggleClass("glyphicon-unchecked");
+	});
 
 	$(function() {
 
