@@ -17,6 +17,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="js/bootbox.min.js"></script>
 
 </head>
 
@@ -26,7 +27,7 @@
 
 <div id="header" class="navbar navbar-default navbar-fixed-top">
 
-	<div class="customHeader">
+	<div class="customHeader scrollUpHeader">
 		<div><h1 class="headline"> News Hub</h1></div>
 	</div>
 
@@ -42,7 +43,7 @@
     <nav class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
             <li>
-                <a href="#">Articles</a>
+                <a href="#">Artikel</a>
             </li>
 	    			<li>
                 <a href="#">Feeds</a>
@@ -57,9 +58,10 @@
 							<div class="input-group-btn">
 								<button id="tagBtn" type="button" class="btn btn-default dropdown-toggle center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategorie  <span class="caret"></span></button>
 								<ul id="dropDownMenu" class="dropdown-menu">
-									<li><a href="#">Wirtschaft</a></li>
-									<li><a href="#">Politik</a></li>
-									<li><a href="#">Informatik</a></li>
+									<li><a href="#">Wirtschaft </a></li>
+									<li><a href="#">Politik </a></li>
+									<li><a href="#">Technik </a></li>
+									<li><a href="#">Regional </a></li>
 									<li role="separator" class="divider"></li>
 									<!-- Textbox for additional Label Input -->
 									<li class="tbListFix"><input type="text" id="tagchooser" class="form-control fixWidthTB" placeholder="benutzerdefiniert"> <!--<button class="btn btn-default fixWidthBtn"><span class="glyphicon glyphicon-plus"></span></button>--></li>
@@ -68,7 +70,7 @@
 							<input type="text" class="form-control searchBarExtension" aria-label="...">
 						</div><!-- /input-group -->
 					</div> <!-- Form Group -->
-					<button type="submit" class="btn btn-default">Hinzufuegen</button>
+					<button type="submit" class="btn btn-default">Hinzuf&uuml;gen</button>
 				</form>
 
 
@@ -79,8 +81,8 @@
             <li class="dropdown">
                 <a href="#" id="" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Peter<i class="icon-sort-down"></i></a>
                 <ul class="dropdown-menu pull-right">
-                    <li id="logoutBtn"><a href="index.html">Log Out</a></li>
-										<li id="settBtn"><a href="settings.html">Settings</a></li>
+                    <li id="logoutBtn"><a href="index.html">Ausloggen</a></li>
+										<li id="settBtn"><a href="settings.html">Einstellungen</a></li>
                 </ul>
             </li>
         </ul>
@@ -99,7 +101,7 @@
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Schlagwortsuche">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+        <button class="btn btn-default" type="button">Los!</button>
       </span>
     </div>
 		<!-- /Search Bar -->
@@ -117,7 +119,7 @@
 
 
 	<div class="input-group date picker" data-provide="datepicker">
-	    <input type="text" class="form-control">
+	    <input type="text" class="form-control" placeholder="Datum ausw&auml;hlen">
 	    <div class="input-group-addon">
 	        <span class="glyphicon glyphicon-th"></span>
 	    </div>
@@ -141,13 +143,12 @@
 							<a href="readArticle.html">
 								<h3 class="panel-title pull-left panel-custom-heading" >Feed #1</h3>
 							</a>
+							<div class="pull-right clearfix">
+								<a class="trash btnRemoveArticle deletePost" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+							</div>
 						</div>
 
-						<!--
-						<div class="pull-right deletePost" onclick="deletePost()">
-							<span class="glyphicon glyphicon-trash"></span>
-						</div>
--->
+
 						<div class="panel-body panelFeed">
 							<div class="textPart">
 								Accusamus velit quia accusantium est. Velit ducimus rerum aut. Inventore repellat earum sunt architecto id dolores dolores tempora. Repellendus eaque nostrum quam corporis sit. Ex perferendis vitae nostrum similique est quidem voluptatem odio.
@@ -155,51 +156,18 @@
 								Earum aut eveniet et amet ea numquam. Impedit optio reiciendis est. Minus perferendis quasi ut non vero facere repellendus.
 								Incidunt non quaerat impedit. Praesentium ratione et impedit. Natus sit beatae ullam dolor quod hic. Perferendis vel facere eveniet delectus fuga delectus aperiam suscipit. Aspernatur tempora atque itaque cumque in.
 								Atque et velit mollitia. Reiciendis ut officia sunt id. Illum quo omnis aut natus eligendi. Quibusdam a dolorem numquam non voluptatum adipisci impedit.
+
 							</div>
 								<div class="thumbnail">
+
 								</div>
+								<span class="datetime">Datum: 12/05/2017</span>
 
 						</div>
 
 					</div>
 
-					<!-- /Article Panel -->
-
-
-					<!-- Article Panel -->
-
-					<div class="panel panel-default panel-custom" >
-
-						<div class="panel-heading clearfix">
-							<a href="readArticle.html">
-								<h3 class="panel-title pull-left panel-custom-heading" >Article #1</h3>
-							</a>
-						</div>
-
-						<!--
-						<div class="pull-right deletePost" onclick="deletePost()">
-							<span class="glyphicon glyphicon-trash"></span>
-						</div>
--->
-						<div class="panel-body panelArticle">
-							<div class="textPart">
-								Accusamus velit quia accusantium est. Velit ducimus rerum aut. Inventore repellat earum sunt architecto id dolores dolores tempora. Repellendus eaque nostrum quam corporis sit. Ex perferendis vitae nostrum similique est quidem voluptatem odio.
-								Qui rerum minus voluptate. Unde quidem qui nulla non iure aperiam beatae soluta. Numquam nesciunt quidem aut inventore. Aspernatur et repellat vel numquam eos deserunt molestiae.
-								Earum aut eveniet et amet ea numquam. Impedit optio reiciendis est. Minus perferendis quasi ut non vero facere repellendus.
-								Incidunt non quaerat impedit. Praesentium ratione et impedit. Natus sit beatae ullam dolor quod hic. Perferendis vel facere eveniet delectus fuga delectus aperiam suscipit. Aspernatur tempora atque itaque cumque in.
-								Atque et velit mollitia. Reiciendis ut officia sunt id. Illum quo omnis aut natus eligendi. Quibusdam a dolorem numquam non voluptatum adipisci impedit.
-							</div>
-								<div class="thumbnail">
-								</div>
-
-						</div>
-
-					</div>
-
-					<!-- /Article Panel -->
-
-
-					<!-- Article Panel -->
+					<!-- /Article Panel --><!-- Article Panel -->
 
 					<div class="panel panel-default panel-custom" >
 
@@ -207,13 +175,12 @@
 							<a href="readArticle.html">
 								<h3 class="panel-title pull-left panel-custom-heading" >Feed #1</h3>
 							</a>
+							<div class="pull-right clearfix">
+								<a class="trash btnRemoveArticle deletePost" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+							</div>
 						</div>
 
-						<!--
-						<div class="pull-right deletePost" onclick="deletePost()">
-							<span class="glyphicon glyphicon-trash"></span>
-						</div>
--->
+
 						<div class="panel-body panelFeed">
 							<div class="textPart">
 								Accusamus velit quia accusantium est. Velit ducimus rerum aut. Inventore repellat earum sunt architecto id dolores dolores tempora. Repellendus eaque nostrum quam corporis sit. Ex perferendis vitae nostrum similique est quidem voluptatem odio.
@@ -221,18 +188,18 @@
 								Earum aut eveniet et amet ea numquam. Impedit optio reiciendis est. Minus perferendis quasi ut non vero facere repellendus.
 								Incidunt non quaerat impedit. Praesentium ratione et impedit. Natus sit beatae ullam dolor quod hic. Perferendis vel facere eveniet delectus fuga delectus aperiam suscipit. Aspernatur tempora atque itaque cumque in.
 								Atque et velit mollitia. Reiciendis ut officia sunt id. Illum quo omnis aut natus eligendi. Quibusdam a dolorem numquam non voluptatum adipisci impedit.
+
 							</div>
 								<div class="thumbnail">
+
 								</div>
+								<span class="datetime">Datum: 12/05/2017</span>
 
 						</div>
 
 					</div>
 
-					<!-- /Article Panel -->
-
-
-					<!-- Article Panel -->
+					<!-- /Article Panel --><!-- Article Panel -->
 
 					<div class="panel panel-default panel-custom" >
 
@@ -240,13 +207,12 @@
 							<a href="readArticle.html">
 								<h3 class="panel-title pull-left panel-custom-heading" >Feed #1</h3>
 							</a>
+							<div class="pull-right clearfix">
+								<a class="trash btnRemoveArticle deletePost" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+							</div>
 						</div>
 
-						<!--
-						<div class="pull-right deletePost" onclick="deletePost()">
-							<span class="glyphicon glyphicon-trash"></span>
-						</div>
--->
+
 						<div class="panel-body panelFeed">
 							<div class="textPart">
 								Accusamus velit quia accusantium est. Velit ducimus rerum aut. Inventore repellat earum sunt architecto id dolores dolores tempora. Repellendus eaque nostrum quam corporis sit. Ex perferendis vitae nostrum similique est quidem voluptatem odio.
@@ -254,18 +220,18 @@
 								Earum aut eveniet et amet ea numquam. Impedit optio reiciendis est. Minus perferendis quasi ut non vero facere repellendus.
 								Incidunt non quaerat impedit. Praesentium ratione et impedit. Natus sit beatae ullam dolor quod hic. Perferendis vel facere eveniet delectus fuga delectus aperiam suscipit. Aspernatur tempora atque itaque cumque in.
 								Atque et velit mollitia. Reiciendis ut officia sunt id. Illum quo omnis aut natus eligendi. Quibusdam a dolorem numquam non voluptatum adipisci impedit.
+
 							</div>
 								<div class="thumbnail">
+
 								</div>
+								<span class="datetime">Datum: 12/05/2017</span>
 
 						</div>
 
 					</div>
 
-					<!-- /Article Panel -->
-
-
-					<!-- Article Panel -->
+					<!-- /Article Panel --><!-- Article Panel -->
 
 					<div class="panel panel-default panel-custom" >
 
@@ -273,13 +239,12 @@
 							<a href="readArticle.html">
 								<h3 class="panel-title pull-left panel-custom-heading" >Feed #1</h3>
 							</a>
+							<div class="pull-right clearfix">
+								<a class="trash btnRemoveArticle deletePost" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+							</div>
 						</div>
 
-						<!--
-						<div class="pull-right deletePost" onclick="deletePost()">
-							<span class="glyphicon glyphicon-trash"></span>
-						</div>
--->
+
 						<div class="panel-body panelFeed">
 							<div class="textPart">
 								Accusamus velit quia accusantium est. Velit ducimus rerum aut. Inventore repellat earum sunt architecto id dolores dolores tempora. Repellendus eaque nostrum quam corporis sit. Ex perferendis vitae nostrum similique est quidem voluptatem odio.
@@ -287,42 +252,12 @@
 								Earum aut eveniet et amet ea numquam. Impedit optio reiciendis est. Minus perferendis quasi ut non vero facere repellendus.
 								Incidunt non quaerat impedit. Praesentium ratione et impedit. Natus sit beatae ullam dolor quod hic. Perferendis vel facere eveniet delectus fuga delectus aperiam suscipit. Aspernatur tempora atque itaque cumque in.
 								Atque et velit mollitia. Reiciendis ut officia sunt id. Illum quo omnis aut natus eligendi. Quibusdam a dolorem numquam non voluptatum adipisci impedit.
+
 							</div>
 								<div class="thumbnail">
+
 								</div>
-
-						</div>
-
-					</div>
-
-					<!-- /Article Panel -->
-
-
-					<!-- Article Panel -->
-
-					<div class="panel panel-default panel-custom" >
-
-						<div class="panel-heading clearfix">
-							<a href="readArticle.html">
-								<h3 class="panel-title pull-left panel-custom-heading" >Feed #1</h3>
-							</a>
-						</div>
-
-						<!--
-						<div class="pull-right deletePost" onclick="deletePost()">
-							<span class="glyphicon glyphicon-trash"></span>
-						</div>
--->
-						<div class="panel-body panelFeed">
-							<div class="textPart">
-								Accusamus velit quia accusantium est. Velit ducimus rerum aut. Inventore repellat earum sunt architecto id dolores dolores tempora. Repellendus eaque nostrum quam corporis sit. Ex perferendis vitae nostrum similique est quidem voluptatem odio.
-								Qui rerum minus voluptate. Unde quidem qui nulla non iure aperiam beatae soluta. Numquam nesciunt quidem aut inventore. Aspernatur et repellat vel numquam eos deserunt molestiae.
-								Earum aut eveniet et amet ea numquam. Impedit optio reiciendis est. Minus perferendis quasi ut non vero facere repellendus.
-								Incidunt non quaerat impedit. Praesentium ratione et impedit. Natus sit beatae ullam dolor quod hic. Perferendis vel facere eveniet delectus fuga delectus aperiam suscipit. Aspernatur tempora atque itaque cumque in.
-								Atque et velit mollitia. Reiciendis ut officia sunt id. Illum quo omnis aut natus eligendi. Quibusdam a dolorem numquam non voluptatum adipisci impedit.
-							</div>
-								<div class="thumbnail">
-								</div>
+								<span class="datetime">Datum: 12/05/2017</span>
 
 						</div>
 
@@ -360,6 +295,90 @@
 
 </body>
 <script>
+
+/*
+	Scrolling Header
+
+		Padding-top With Header: 180px
+		Padding-top Witout Header: 80px
+		Css Styles to change: #main-wrapper (layout.css) & .sb (sidebar.css)
+
+
+*/
+
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.customHeader').outerHeight();
+
+$("#main-wrapper").scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $("#main-wrapper").scrollTop();
+
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+				console.log("scrolling down");
+        $('.customHeader').removeClass("scrollUpHeader").addClass("scrollDownHeader");
+
+				$('#main-wrapper').css("padding-top", "80px");
+				$('#sidebar-wrapper').css("padding-top", "80px");
+
+
+    } else {
+        // Scroll Up
+
+        if(st + $("#main-wrapper").height() < $(document).height()) {
+					console.log("scrolling up");
+					$('.customHeader').removeClass("scrollDownHeader").addClass("scrollUpHeader");
+					$('#main-wrapper').css("padding-top", "180px");
+					$('.sb').css("padding-top", "180px");
+        }
+    }
+
+    lastScrollTop = st;
+}
+
+
+
+
+
+//************************************************************//
+
+
+	$(".btnRemoveArticle").click(function() {
+
+		var tmpThis = this;
+		// Ask if the user wants to delete this
+		bootbox.confirm("Sind Sie sicher das Sie diesen Post l&ouml;schen wollen?", function(result){
+
+			//console.log('This was logged in the callback: ' + result);
+
+			if(result) {
+				$(tmpThis).closest(".panel.panel-default.panel-custom").remove();
+			}
+
+		});
+
+
+
+	});
+
 
 
 		function deletePost(index) {

@@ -1,6 +1,7 @@
 .sb {
 /* Padding of the Searchbar */
-padding-top: 180px !important;
+
+/* With Header: 180, Without: 80*/
 padding-left: 10px !important;
 padding-right: 10px !important;
 
@@ -14,12 +15,7 @@ padding-right: 10px !important;
 }
 
 
-/* Focused List-group-items */
-.list-group-item:focus {
 
-	background-color:#c5cae9 !important;
-
-}
 
 /* List Stuff */
 .customList {
@@ -33,4 +29,8 @@ padding-right: 10px !important;
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 0px !important;
+}
+
+.customListItem.hilight {
+    	background-color:#c5cae9 !important;
 }
