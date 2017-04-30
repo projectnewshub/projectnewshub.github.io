@@ -1,0 +1,89 @@
+
+Inspired by: https://stackoverflow.com/questions/3988627/using-template-on-php#3989380
+
+settings.php
+    - SQL Connection
+    - Global Functions
+    - ...
+Example:
+    <?php
+    $hostname_conn,$database_conn,$username_conn,$password_conn,$conn;
+    $hostname_conn = "localhost";
+    $database_conn = "test";
+    $username_conn = "****";
+    $password_conn = "****";
+    $conn = mysql_connect($hostname_conn, $username_conn, $password_conn) 
+         or trigger_error(mysql_error(),E_USER_ERROR); 
+    mysql_query("SET NAMES 'utf8'") or trigger_error(mysql_error(),E_USER_ERROR);
+
+    $tpl = "default.php";
+    $pagetitle = "";
+
+    function dbgetarr(){
+        $a     = array();
+        $args  = func_get_args();
+        $query = array_shift($args); 
+        $query = str_replace("%s","'%s'",$query); 
+        foreach ($args as $key => $val) { 
+        $args[$key] = mysql_real_escape_string($val); 
+    } 
+    $query = vsprintf($query, $args);
+
+    $res = mysql_query($query);
+    if (!$res) {
+        trigger_error("dbget: ".mysql_error()." in ".$query);
+    } else {
+        while($row = mysql_fetch_assoc($res)) $a[]=$row;
+    }
+    return $a;
+    }
+
+    ?>
+
+
+index.php
+    - Main Script
+
+    Example: 
+    <?
+        //include our settings, connect to database etc.
+        include dirname($_SERVER['DOCUMENT_ROOT']).'/cfg/settings.php';
+
+        //getting required data
+        $DATA=dbgetarr("SELECT * FROM table");
+        $pagetitle = "Page Title";
+
+        //and then call a template:
+        $tp_sidebar = "sidebar.php";
+        $tp_navbar_login = "navbar_login.php";
+        $tp_navbar_logout = "navbar_logout.php";
+
+        include "layout.php";
+    ?>
+
+layout.php
+    - html Template
+    - main Layout, -> navbar and sidebar will be included via php
+
+    Example:
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>My site. <?=$pagetitle?></title>
+        </head>
+        <body>
+            <div id="page">
+                <? include $tp_sidebar ?>
+            </div>
+        </body>
+    </html>
+
+sidebar.php
+    - html Template
+
+navbar_logout.php
+    - html Template
+    - navbar when user is not logged in
+
+navbar_login.php
+    - html Template
+    - navbar when user is logged in
